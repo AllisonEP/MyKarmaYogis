@@ -14,6 +14,8 @@ class VolunteersController < ApplicationController
     end 
 
     def show
+        @volunteer = Volunteer.find_by_id(params[:id])
+        redirect_to '/' if !@Volunteer
     end
 
     private 

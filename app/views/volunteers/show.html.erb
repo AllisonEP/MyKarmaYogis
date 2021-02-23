@@ -1,0 +1,10 @@
+<h1> Welcome <%=@volunteer.username %></h1>
+
+<%= form_tag(action: "logout", method: 'delete') %>
+
+    <% submit_tag "Logout" %>
+
+<% end %>
+
+
+#<%= link_to "Logout", logout_path, method:"delete"%>

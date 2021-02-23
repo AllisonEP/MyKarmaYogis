@@ -1,0 +1,22 @@
+<h1>Login</h1>
+
+<%= form_for :volunteer do |f|%>
+
+<%=f.label :username%>
+<%=f.text_field :username%>
+<br>
+<br>
+<br>
+<br>
+<%=f.label :password%>
+<%=f.password_field :password%>
+#this is importantly not password digest
+
+
+<%= f.submit "Login" %>
+
+<br>
+<br>
+
+
+<% end %>
