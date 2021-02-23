@@ -6,7 +6,7 @@ class VolunteersController < ApplicationController
     def create
        @volunteer = Volunteer.new(volunteer_params)
        if @volunteer.save
-        session[:volunteer_id] = @volunteer_id
+        session[:volunteer_id] = @volunteer.id
         redirect_to @volunteer
        else
         render :new
@@ -14,6 +14,7 @@ class VolunteersController < ApplicationController
     end 
 
     def show
+        redirect_if_not_logged_in?
         @volunteer = Volunteer.find_by_id(params[:id])
         redirect_to '/' if !@Volunteer
     end
