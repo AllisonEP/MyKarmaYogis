@@ -1,0 +1,24 @@
+<h1>Sign Up</h1>
+
+<%= form_for(@volunteer, url: '/signup') do |f| %>
+
+<%=f.label :username%>
+<%=f.text_field :username%>
+<br>
+<br>
+<br>
+<%=f.label :email%>
+<%=f.email_field :email%>
+<br>
+<br>
+<br>
+<%=f.label :password%>
+<%=f.password_field :password%>
+#this is importantly not password digest
+
+<br>
+<br>
+
+<%= f.submit "Submit" %>
+<% end %>
+
