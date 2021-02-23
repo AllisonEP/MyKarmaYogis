@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
+
+    helper_method :current_user, :logged_in?
+    #these gives access to methods in views
     
-    def current_vounteer
+    private 
+    def current_volunteer
         @current_volunteer ||= Volunteer.find_by_id(session[:volunteer_id]) if session[:volunteer_id]
     end
 
