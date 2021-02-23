@@ -1,6 +1,9 @@
 <h1>Login</h1>
 
-<%= form_for :volunteer do |f|%>
+<%= flash[:message] if flash[:message] %> 
+
+<%= form_for :volunteer do |f| %>
+
 
 <%=f.label :username%>
 <%=f.text_field :username%>
@@ -17,6 +20,5 @@
 
 <br>
 <br>
-
 
 <% end %>
