@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
+  root 'sessions#home'
 
 
   get '/signup' => 'volunteers#new'
   post '/signup' => 'volunteers#create'
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'sesions#create'
+
+  delete '/logout' => 'sessions#destroy'
+
 
 
 
