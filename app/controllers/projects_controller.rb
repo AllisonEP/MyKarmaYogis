@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
     before_action :redirect_if_not_logged_in?
+
     def new 
         @project = Project.new
     end
@@ -15,7 +16,7 @@ end
 
     private 
 
-    def post_params
+    def project_params
         params.require(:project).permit(:title, :content)
     end
 
