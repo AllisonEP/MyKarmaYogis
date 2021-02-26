@@ -1,14 +1,16 @@
 <h1> Create a Project!</h1>
 
 <%= form_for(@project) do |f| %>
+<p>
 
 <%= f.label :title%>
 <%= f.text_field :title%>
-
-
+<div>
+<div>
 <%= f.label :content%>
 <%= f.text_field :content%>
 
 
 <%= f.submit %>
+</p>
 <% end %>

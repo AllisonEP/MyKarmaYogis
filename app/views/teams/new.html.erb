@@ -1,0 +1,33 @@
+<% if @team.project %>
+<h1>New Team for <%= @team.project.title%></h1>
+<% else %>
+<h1>New Team</h1>
+<% end %>
+
+<% if @team.errors.any?%>
+    <div id="error_explaination">
+    <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+    <ul>
+    <% @project.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+    </ul>
+    </div>
+    <% end %>
+
+<%= form_for ([@team.project, @team) do |f|%>
+
+<% if !@team.project %>
+ <%= f.label :project %>
+ <%= f.collection_select :project_id, Project.all, :id, :title %>
+<% else%>
+    <%= f.hidden_field :project_id %>
+<% end %>
+
+<%= f.label :content %>
+<%= f.text_field :content%>
+
+<%= f.submit %>
+
+<% end %>

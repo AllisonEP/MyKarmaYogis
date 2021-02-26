@@ -3,6 +3,8 @@ class VolunteersController < ApplicationController
         @volunteer = Volunteer.new
     end
 
+
+
     def create
        @volunteer = Volunteer.new(volunteer_params)
        if @volunteer.save

@@ -1,0 +1,12 @@
+<h1><%=@team.name%></h1>
+
+<div><%= @team.content%></div>
+
+<p><%= link_to 'See Team Projects', team_projects_path(@project)%></p>
+
+<p><%= link_to 'Add a Project', new_team_project_path(@project)%></p>
+
+<h4>Teams:</h4>
+<% @teams.project.each do |t|%>
+<li><strong><%= t.volunteer.username%></strong> says "<%= link_to t.content, team_path(t)%>" </li>
+<% end %>

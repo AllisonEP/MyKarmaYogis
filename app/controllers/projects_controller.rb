@@ -12,12 +12,28 @@ class ProjectsController < ApplicationController
         else 
             render :new
     end  
+
+
+        def index 
+            @projects = Project.all 
+        end 
+
+    #def index 
+       #if params[:volunteer_id] && @volunteer = Volunteer.find_by_id(params[:project_id])
+                #@projects = @volunteer.projects
+        #else
+            #@error = "This isn't an existing volunteer" if params[:volunteer_id]
+            #@projects = Projects.all
+        #end
+    #end
+
+
 end
 
     private 
 
     def project_params
-        params.require(:project).permit(:title, :content)
+        params.permit(:title, :content)
     end
 
 end
